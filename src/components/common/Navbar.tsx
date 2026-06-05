@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-white/95 backdrop-blur-xl text-slate-900 shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-17 items-center justify-between">
           
           {/* Brand Logo -> Acts as Home Link */}
           <div className="flex flex-shrink-0 items-center">

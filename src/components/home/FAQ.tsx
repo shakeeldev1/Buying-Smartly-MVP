@@ -83,20 +83,20 @@ function FAQ() {
               return (
                 <div
                   key={i}
-                  className={`rounded-[2rem] border bg-white transition-all duration-300 overflow-hidden ${
+                  className={`rounded-xl border bg-white transition-all duration-300 overflow-hidden ${
                     isOpen ? 'border-[#D4AF37]/30 shadow-xl shadow-[#D4AF37]/10' : 'border-slate-200 shadow-sm'
                   }`}
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : i)}
-                    className="w-full px-6 py-5 text-left flex items-start justify-between gap-4 bg-white focus:outline-none"
+                    className="w-full px-5 py-2 text-left flex items-start justify-between gap-4 bg-white focus:outline-none"
                   >
                     <span className={`block text-left text-sm sm:text-base font-semibold tracking-tight transition-colors duration-200 ${
                       isOpen ? 'text-slate-900' : 'text-slate-800'
                     }`}>
                       {faq.q}
                     </span>
-                    <span className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 ${
+                    <span className={`flex h-11 w-11 items-center justify-center rounded-xl border transition-all duration-300 ${
                       isOpen ? 'border-[#D4AF37] bg-[#D4AF37] text-white rotate-180' : 'border-slate-200 bg-white text-slate-500 group-hover:border-[#D4AF37]/50'
                     }`}>
                       <ChevronDown className="h-5 w-5" />
