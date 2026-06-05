@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
 import Home from './pages/Home'
-
+import Contact from './pages/Contact'
 const MainFunction = ()=>{
   return(
     <div>
@@ -22,9 +22,15 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       }
     ]
   }
+
+  
 ])
 
 function App() {
