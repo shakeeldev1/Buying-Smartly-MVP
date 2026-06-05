@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
 
           <h1 className="mt-6 text-5xl md:text-6xl font-bold">
             Let's Build Something
-            <span className="text-[#A18244]"> Together</span>
+            <span className="text-[#A18244]"> Together </span>
           </h1>
 
           <p className="mt-6 max-w-2xl mx-auto text-zinc-400 text-lg leading-relaxed">
@@ -178,7 +178,7 @@ const Contact: React.FC = () => {
                 <span className="flex items-center justify-center gap-2">
                   Send Message
                   <Send
-                    size={18}
+                    size={16}
                     className="transition-transform group-hover:translate-x-1"
                   />
                 </span>
