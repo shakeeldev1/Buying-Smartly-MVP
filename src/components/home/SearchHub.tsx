@@ -73,7 +73,7 @@ function SearchHub() {
     <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 font-sans antialiased">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-10 lg:mb-10">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 text-[#D4AF37] text-[10px] sm:text-xs font-semibold tracking-wider px-3 py-1.5 uppercase mb-4 shadow-sm">
             <Layers className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> Discovery Engine
           </div>
@@ -88,50 +88,54 @@ function SearchHub() {
         <div className="space-y-5 sm:space-y-6">
           
           {/* Search Bar */}
-          <div className="relative rounded-2xl sm:rounded-3xl shadow-lg shadow-slate-900/10 bg-white border border-slate-200/80 p-2.5 sm:p-3 lg:p-4 flex flex-col sm:flex-row items-center gap-2 sm:gap-3 hover:shadow-xl hover:shadow-[#D4AF37]/5 transition-all duration-300">
-            <div className="flex items-center flex-1 w-full sm:w-auto pl-2 sm:pl-4">
-              <Search className="h-5 w-5 text-slate-400 mr-2 flex-shrink-0" />
-              <input
-                type="text"
-                placeholder="Query by asset, corridor, industry, or service parameter..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full py-2.5 sm:py-3 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none text-xs sm:text-sm font-normal"
-              />
+          <div className="mx-auto max-w-4xl">
+            <div className="relative rounded-2xl sm:rounded-3xl shadow-lg shadow-slate-900/10 bg-white border border-slate-200/80 p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3 hover:shadow-xl hover:shadow-[#D4AF37]/5 transition-all duration-300">
+              <div className="flex items-center flex-1 w-full bg-slate-50 rounded-2xl px-4 py-3 border border-slate-200/80">
+                <Search className="h-5 w-5 text-slate-400 mr-3 flex-shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Query by asset, corridor, industry, or service parameter..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-transparent text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:outline-none"
+                />
+              </div>
+              <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-[#D4AF37] hover:text-slate-900 transition-all duration-300 shadow-md hover:shadow-lg">
+                <SlidersHorizontal className="h-4 w-4" /> Execute
+              </button>
             </div>
-            <button className="w-full sm:w-auto flex items-center justify-center gap-1.5 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-slate-900 text-white hover:bg-[#D4AF37] hover:text-slate-900 transition-all duration-300 font-medium text-xs tracking-wider uppercase shadow-md hover:shadow-lg">
-              <SlidersHorizontal className="h-4 w-4" /> Execute
-            </button>
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-2 sm:gap-2.5 pt-2 sm:pt-3">
-            <button
-              onClick={() => setSelectedCategory('All')}
-              className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 uppercase border whitespace-nowrap ${
-                selectedCategory === 'All'
-                  ? 'bg-[#D4AF37] text-slate-900 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/20'
-                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:border-[#D4AF37]/30'
-              }`}
-            >
-              All Ecosystems
-            </button>
-            {CATEGORIES.map((cat) => (
+          <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 pt-2 sm:pt-3 max-w-4xl">
               <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 uppercase border whitespace-nowrap ${
-                  selectedCategory === cat
+                onClick={() => setSelectedCategory('All')}
+                className={`px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 uppercase border whitespace-nowrap ${
+                  selectedCategory === 'All'
                     ? 'bg-[#D4AF37] text-slate-900 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/20'
                     : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:border-[#D4AF37]/30'
-                }`}
+              }`}
               >
-                {cat}
+                All Ecosystems
               </button>
-            ))}
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 uppercase border whitespace-nowrap ${
+                    selectedCategory === cat
+                      ? 'bg-[#D4AF37] text-slate-900 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/20'
+                      : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:border-[#D4AF37]/30'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
               {filteredPreviews.length > 0 ? (
                 filteredPreviews.map((item) => (
                   <div key={item.id} className="group relative p-5 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-md shadow-slate-900/5 hover:shadow-xl hover:shadow-[#D4AF37]/10 hover:border-[#D4AF37]/40 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1 cursor-pointer">
