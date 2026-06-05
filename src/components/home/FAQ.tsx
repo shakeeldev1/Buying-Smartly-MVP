@@ -40,74 +40,74 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="p-12 bg-[#FAF9F6] text-zinc-800 antialiased">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-        
-        {/* TWO-COLUMN CORE GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
-          {/* LEFT COLUMN: CONTEXT HEADER & VISUAL ANCHOR */}
-          <div className="lg:col-span-5 lg:sticky lg:top-8 space-y-8">
-            <div className="flex flex-col items-start text-left">
-              <span className="text-xs font-bold tracking-[0.25em] text-[#A18244] uppercase mb-3">
-                Support Center
+    <section className="py-20 bg-white text-slate-900 antialiased">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[420px_minmax(0,1fr)] gap-12 lg:gap-16 items-start">
+          <div className="lg:sticky lg:top-8 space-y-8">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37]/10 text-[#A18244] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.25em] shadow-sm">
+                <ChevronDown className="h-3.5 w-3.5 text-[#A18244]" />
+                FAQ Hub
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 mb-4 leading-tight">
-                Frequently Asked <span className="text-[#A18244]">Questions</span>
+              <h2 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+                Frequently asked questions for the BuySmartly ecosystem
               </h2>
-              <p className="text-zinc-500 font-light max-w-sm leading-relaxed">
-                Clear insights and support definitions explaining the architecture of the BuySmartly connection network.
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                Get concise clarity on onboarding, verification, vertical coverage, request submission, and provider access in a premium support experience.
               </p>
-              <div className="w-12 h-[2px] bg-[#A18244]/30 mt-6 rounded-full" />
             </div>
 
-            {/* Premium Anchor Image */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-zinc-200/60 h-72 hidden sm:block relative transition-transform duration-500 hover:scale-[1.01]">
-              <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
-                alt="Corporate Advisory Workspace" 
-                className="w-full h-full object-cover object-center"
+            <div className="grid gap-4">
+              <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-[#A18244] font-semibold mb-2">Designed for professionals</p>
+                <p className="text-sm leading-6 text-slate-700">Structured answers designed to guide verified buyers and providers through the BuySmartly network fast.</p>
+              </div>
+              <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-5 shadow-sm hidden sm:block">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-[#A18244] font-semibold mb-2">Premium support</p>
+                <p className="text-sm leading-6 text-slate-700">Our platform combines curated verification, global corridors and trusted partner workflows in one place.</p>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] overflow-hidden border border-slate-200 shadow-xl h-72 hidden sm:block">
+              <img
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                alt="Corporate Advisory Workspace"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-[#A18244]/5 mix-blend-multiply pointer-events-none" />
             </div>
           </div>
 
-          {/* RIGHT COLUMN: DARK INTERACTIVE ACCORDIONS */}
-          <div className="lg:col-span-7 space-y-4">
+          <div className="space-y-4">
             {faqs.map((faq, i) => {
               const isOpen = openIndex === i;
               return (
-                <div 
-                  key={i} 
-                  className={`bg-[#181818] rounded-2xl border transition-all duration-300 overflow-hidden ${
-                    isOpen ? 'border-[#A18244]/50 shadow-lg shadow-[#A18244]/5' : 'border-zinc-800 shadow-md'
+                <div
+                  key={i}
+                  className={`rounded-[2rem] border bg-white transition-all duration-300 overflow-hidden ${
+                    isOpen ? 'border-[#D4AF37]/30 shadow-xl shadow-[#D4AF37]/10' : 'border-slate-200 shadow-sm'
                   }`}
                 >
-                  {/* Trigger Header Button */}
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : i)}
-                    className="w-full px-5 py-2 sm:px-5 text-left flex justify-between items-center gap-4 bg-transparent select-none group"
+                    className="w-full px-6 py-5 text-left flex items-start justify-between gap-4 bg-white focus:outline-none"
                   >
-                    <span className={`font-semibold tracking-tight transition-colors duration-200 ${
-                      isOpen ? 'text-[#A18244]' : 'text-white group-hover:text-[#A18244]/90'
+                    <span className={`block text-left text-sm sm:text-base font-semibold tracking-tight transition-colors duration-200 ${
+                      isOpen ? 'text-slate-900' : 'text-slate-800'
                     }`}>
                       {faq.q}
                     </span>
-                    <div className={`h-8 w-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center flex-shrink-0 text-[#A18244] transition-all duration-300 ${
-                      isOpen ? 'bg-[#A18244] text-white rotate-180' : 'group-hover:border-[#A18244]/30'
+                    <span className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 ${
+                      isOpen ? 'border-[#D4AF37] bg-[#D4AF37] text-white rotate-180' : 'border-slate-200 bg-white text-slate-500 group-hover:border-[#D4AF37]/50'
                     }`}>
-                      <ChevronDown className="h-4 w-4" />
-                    </div>
+                      <ChevronDown className="h-5 w-5" />
+                    </span>
                   </button>
 
-                  {/* Expandable Panel Body */}
-                  <div 
-                    className={`transition-all duration-300 ease-in-out ${
-                      isOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
-                    }`}
-                  >
-                    <div className="px-6 pb-6 pt-2 sm:px-8 sm:pb-6 border-t border-zinc-800 bg-zinc-900/20">
-                      <p className="text-zinc-400 text-sm font-light leading-relaxed">
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <div className="px-6 pb-6 pt-2 bg-slate-50 border-t border-slate-200">
+                      <p className="text-sm leading-7 text-slate-600">
                         {faq.a}
                       </p>
                     </div>
@@ -116,7 +116,6 @@ function FAQ() {
               );
             })}
           </div>
-
         </div>
       </div>
     </section>
