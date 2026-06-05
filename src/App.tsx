@@ -3,7 +3,6 @@ import './App.css'
 import Navbar from './components/common/Navbar'
 import Footer from './components/common/Footer'
 import Home from './pages/Home'
-import AboutPage from './pages/AboutPage'
 
 const MainFunction = ()=>{
   return(
@@ -23,13 +22,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
-      },
-      {
-        path: '/about',
-        element: <AboutPage/>
       }
     ]
   }
+
+  
 ])
 
 function App() {
