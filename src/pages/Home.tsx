@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/home/Hero';
 import SearchHub from '../components/home/SearchHub';
 import AboutUs from '../components/home/AboutUs';
+import LaunchReady from '../components/home/LaunchReady';
 import OurServices from '../components/home/OurServices';
 import WhyChoose from '../components/home/WhyChoose';
 import StatsBand from '../components/home/StatsBand';
@@ -13,6 +14,7 @@ function Home() {
     <div className="bg-white text-zinc-900 antialiased">
       <Hero />
       <SearchHub />
+      <LaunchReady />
       <AboutUs />
       <OurServices />
       <WhyChoose />
