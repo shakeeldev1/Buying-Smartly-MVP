@@ -40,7 +40,7 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="py-12 bg-[#FAF9F6] text-zinc-800 antialiased">
+    <section className="p-12 bg-[#FAF9F6] text-zinc-800 antialiased">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         
         {/* TWO-COLUMN CORE GRID */}
