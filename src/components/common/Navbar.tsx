@@ -56,7 +56,7 @@ function Navbar() {
             <a href="/auth/signin" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors duration-200">
               Sign In
             </a>
-            <a href="/register" className="bg-[#A18244] px-5 py-2.5 text-sm font-semibold text-black hover:bg-[#8a6e3b] transition-all duration-200 shadow-md shadow-[#A18244]/10">
+            <a href="/register" className="bg-[#A18244] px-5 rounded-xl py-2.5 text-sm font-semibold text-black hover:bg-[#8a6e3b] transition-all duration-200 shadow-md shadow-[#A18244]/10">
               Join Ecosystem
             </a>
           </div>
