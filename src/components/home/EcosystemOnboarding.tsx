@@ -14,7 +14,7 @@ function EcosystemOnboarding() {
             Join the <span className="text-[#D4AF37]">Ecosystem</span>
           </h2>
           <p className="text-slate-500 font-light max-w-md leading-relaxed">
-            Select your primary operational gateway to begin interacting with the network.
+            Select your primary operational Gateway to begin interacting with the network.
           </p>
           <div className="w-12 h-[2px] bg-[#D4AF37]/30 mt-6 rounded-full" />
         </div>
