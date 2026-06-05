@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, SlidersHorizontal, Lock, Layers, Eye, ShieldCheck } from 'lucide-react';
+import { useState } from 'react';
+import { Search, SlidersHorizontal, Layers, Eye } from 'lucide-react';
 
 const CATEGORIES = [
   'Shopping',
@@ -13,7 +13,6 @@ const CATEGORIES = [
   'Professional Services',
 ];
 
-// High-fidelity curated discovery data
 const REALISTIC_PREVIEWS = [
   {
     id: 1,
@@ -63,7 +62,6 @@ function SearchHub() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  // Filter items logic combining search inputs and active pill selections
   const filteredPreviews = REALISTIC_PREVIEWS.filter(item => {
     const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
     const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -72,54 +70,52 @@ function SearchHub() {
   });
 
   return (
-    <section className="py-12 bg-[#e6e5e2] text-zinc-800 font-sans antialiased">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 font-sans antialiased">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        {/* Header Block Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-zinc-900 text-[#A18244] text-xs font-semibold tracking-wider px-2 py-1 uppercase mb-4 shadow-sm">
-            <Layers className="h-3.5 w-3.5" /> Discovery Engine
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-10 lg:mb-10">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 text-[#D4AF37] text-[10px] sm:text-xs font-semibold tracking-wider px-3 py-1.5 uppercase mb-4 shadow-sm">
+            <Layers className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> Discovery Engine
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-950">
-            Search & <span className="text-[#A18244]">Discover</span> Opportunities
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-4">
+            Search & <span className="text-[#D4AF37]">Discover</span> Opportunities
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-zinc-500 font-light leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 font-light leading-relaxed">
             Real-time multi-vertical ecosystem tracking. Preview select verified active channels below.
           </p>
         </div>
 
-        {/* Master Row Structural Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+        <div className="space-y-5 sm:space-y-6">
           
-          {/* Left Layout Pane: Dynamic Filter Dashboard Controls and Results Content */}
-          <div className="lg:col-span-8 space-y-6">
-            
-            {/* Search Execution Bar */}
-            <div className="relative rounded-xl shadow-sm bg-white border border-zinc-200 p-2 flex items-center gap-2">
-              <div className="flex items-center flex-1 pl-3">
-                <Search className="h-5 w-5 text-zinc-400 mr-2" />
+          {/* Search Bar */}
+          <div className="mx-auto max-w-4xl">
+            <div className="relative rounded-2xl sm:rounded-3xl shadow-lg shadow-slate-900/10 bg-white border border-slate-200/80 p-3 sm:p-4 flex flex-col sm:flex-row items-center gap-3 hover:shadow-xl hover:shadow-[#D4AF37]/5 transition-all duration-300">
+              <div className="flex items-center flex-1 w-full bg-slate-50 rounded-2xl px-4 py-3 border border-slate-200/80">
+                <Search className="h-5 w-5 text-slate-400 mr-3 flex-shrink-0" />
                 <input
                   type="text"
                   placeholder="Query by asset, corridor, industry, or service parameter..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full py-2 bg-transparent text-zinc-900 placeholder-zinc-400 focus:outline-none text-sm font-normal"
+                  className="w-full bg-transparent text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:outline-none"
                 />
               </div>
-              <button className="flex items-center gap-1.5 px-6 py-2.5 rounded-lg bg-zinc-950 text-white hover:bg-zinc-800 transition-all font-medium text-xs tracking-wider uppercase">
-                <SlidersHorizontal className="h-3.5 w-3.5" /> Execute
+              <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-[#D4AF37] hover:text-slate-900 transition-all duration-300 shadow-md hover:shadow-lg">
+                <SlidersHorizontal className="h-4 w-4" /> Execute
               </button>
             </div>
+          </div>
 
-            {/* Premium Modular Horizontal Category Filters List Container */}
-            <div className="flex flex-wrap gap-1.5 pt-2">
+          {/* Category Filters */}
+          <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 pt-2 sm:pt-3 max-w-4xl">
               <button
                 onClick={() => setSelectedCategory('All')}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all uppercase border ${
+                className={`px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 uppercase border whitespace-nowrap ${
                   selectedCategory === 'All'
-                    ? 'bg-[#A18244] text-black border-[#A18244] shadow-sm'
-                    : 'bg-white text-zinc-600 border-zinc-200 hover:bg-zinc-50'
-                }`}
+                    ? 'bg-[#D4AF37] text-slate-900 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/20'
+                    : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:border-[#D4AF37]/30'
+              }`}
               >
                 All Ecosystems
               </button>
@@ -127,121 +123,62 @@ function SearchHub() {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all uppercase border ${
+                  className={`px-4 py-2 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 uppercase border whitespace-nowrap ${
                     selectedCategory === cat
-                      ? 'bg-[#A18244] text-black border-[#A18244] shadow-sm'
-                      : 'bg-white text-zinc-600 border-zinc-200 hover:bg-zinc-50'
+                      ? 'bg-[#D4AF37] text-slate-900 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/20'
+                      : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:border-[#D4AF37]/30'
                   }`}
                 >
                   {cat}
                 </button>
               ))}
             </div>
+          </div>
 
-            {/* Opportunities List Rows Interface */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
               {filteredPreviews.length > 0 ? (
                 filteredPreviews.map((item) => (
-                  <div key={item.id} className="group relative p-6 bg-white rounded-xl border border-zinc-200 shadow-sm hover:border-[#A18244]/40 transition-all duration-300 flex flex-col justify-between overflow-hidden">
+                  <div key={item.id} className="group relative p-5 sm:p-6 lg:p-7 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 shadow-md shadow-slate-900/5 hover:shadow-xl hover:shadow-[#D4AF37]/10 hover:border-[#D4AF37]/40 transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1 cursor-pointer">
                     <div>
-                      <div className="flex justify-between items-start gap-4 mb-3">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-[#A18244] bg-[#FAF9F6] border border-zinc-200 px-2.5 py-1 rounded">
+                      <div className="flex justify-between items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] bg-gradient-to-r from-[#D4AF37]/10 to-transparent border border-[#D4AF37]/20 px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-lg flex-shrink-0">
                           {item.category}
                         </span>
-                        <span className="text-xs text-zinc-400 font-medium">{item.location}</span>
+                        <span className="text-[10px] sm:text-xs text-slate-500 font-medium text-right">{item.location}</span>
                       </div>
-                      <h3 className="font-bold text-zinc-900 text-base mb-2 group-hover:text-[#A18244] transition-colors">
+                      <h3 className="font-semibold text-slate-900 text-sm sm:text-base mb-2 group-hover:text-[#D4AF37] transition-colors line-clamp-2">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-zinc-500 font-light leading-relaxed mb-4">
+                      <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-4 line-clamp-2">
                         Secure connection pathway validated via high-yield organizational framework parameters.
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-zinc-100 flex items-center justify-between mt-auto">
-                      <span className="text-[11px] font-medium text-zinc-400 italic">{item.meta}</span>
-                      <span className="inline-flex items-center gap-1 text-xs text-[#A18244] font-semibold">
-                        <Eye className="h-3 w-3" /> Live Preview
+                    <div className="pt-3 sm:pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
+                      <span className="text-[10px] sm:text-[11px] font-medium text-slate-400 italic truncate">{item.meta}</span>
+                      <span className="inline-flex items-center gap-1 text-xs text-[#D4AF37] font-semibold group-hover:translate-x-1 transition-transform flex-shrink-0">
+                        <Eye className="h-3 w-3 sm:h-3.5 sm:w-3.5" /> 
+                        <span className="hidden sm:inline">Preview</span>
                       </span>
                     </div>
                   </div>
                 ))
               ) : (
-                <div className="col-span-2 text-center py-12 bg-white rounded-xl border border-zinc-200 text-zinc-400 text-sm font-light">
+                <div className="col-span-1 sm:col-span-2 lg:col-span-3 text-center py-10 sm:py-12 lg:py-16 bg-white rounded-2xl sm:rounded-3xl border border-slate-200/80 text-slate-400 text-xs sm:text-sm font-light shadow-sm">
                   No preview rows matching this specialized filter parameter.
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Right Layout Pane: Premium Ambient Gated Media Image Showcase Card */}
-          <div className="lg:col-span-4 h-full">
-            <div className="relative rounded-2xl bg-zinc-950 text-white overflow-hidden p-6 border border-zinc-800 shadow-xl flex flex-col justify-between h-[480px] group">
-              
-              {/* Media Visual Layer with CSS Gradient Backdrop Filter Map */}
-              <div className="absolute inset-0 z-0 opacity-40 group-hover:scale-105 transition-transform duration-700">
-                <img 
-                  src="https://media.licdn.com/dms/image/v2/D4E10AQG3fpdp-n80xA/image-shrink_800/B4EZmkZy3lHcAc-/0/1759399850137?e=2147483647&v=beta&t=9JjpsMZOKinlcAXYXRpr28ZYubUNcS-_Jjwn35Nq6nQ" 
-                  alt="Global digital logistics telemetry networks dashboard image mockup"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent" />
-              </div>
-
-              {/* Functional Component Controls Context Content Block */}
-              <div className="relative z-10 flex flex-col h-full justify-between">
-                <div className="flex justify-between items-center">
-                  <div className="text-[10px] uppercase font-bold tracking-widest text-[#A18244] bg-[#A18244]/10 border border-[#A18244]/20 px-2.5 py-1 rounded-md backdrop-blur-md">
-                    Ecosystem Briefing
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-xs text-zinc-400 font-medium">
-                    <ShieldCheck className="h-3.5 w-3.5 text-[#A18244]" /> Encrypted Feeds
-                  </span>
-                </div>
-
-                {/* Central Callout Anchor Action */}
-                <div className="my-auto flex flex-col items-center justify-center text-center px-4">
-                  <a 
-                    href="/register" 
-                    className="h-14 w-14 rounded-full bg-white text-zinc-950 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-105 hover:bg-[#A18244] hover:text-white mb-4 group-hover:shadow-amber-500/10"
-                  >
-                    <Eye className="h-5 w-5" />
-                  </a>
-                  <h4 className="text-lg font-bold text-white tracking-tight mb-1">
-                    Watch Platform Explainer
-                  </h4>
-                  <p className="text-xs text-zinc-300 font-light max-w-xs leading-relaxed">
-                    A comprehensive walk-through highlighting our search infrastructure and monetization mechanics.
-                  </p>
-                </div>
-
-                {/* Secure Gateway Restriction Layer Notification Block */}
-                <div className="mt-auto bg-white/5 backdrop-blur-md rounded-xl border border-white/10 p-4 flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-amber-500/20 text-amber-400 shrink-0">
-                    <Lock className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-white tracking-wide">Advanced Metrics Gated</h5>
-                    <p className="text-[11px] text-zinc-400 font-light leading-snug">
-                      Data feeds, transaction ledger records, and contact nodes require secure verified onboarding accounts.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        {/* Global Conversion Target Link Footnote Area */}
-        <div className="text-center pt-4 border-t border-zinc-200/60 max-w-2xl mx-auto">
+        {/* Bottom CTA */}
+        <div className="text-center pt-6 sm:pt-8 border-t border-slate-200/60 max-w-2xl mx-auto mt-8 sm:mt-12">
           <a 
             href="/register" 
-            className="inline-flex items-center gap-2 group text-sm font-semibold text-zinc-950 hover:text-[#A18244] transition-colors"
+            className="inline-flex items-center justify-center gap-2 group text-xs sm:text-sm font-semibold text-slate-900 hover:text-[#D4AF37] transition-colors"
           >
-            Unlock All Multi-Vertical Verified Pipelines 
-            <span className="text-[#A18244] group-hover:translate-x-1 transition-transform font-bold">→</span>
+            Explore Advanced Multi-Vertical Channels 
+            <span className="text-[#D4AF37] group-hover:translate-x-1 transition-transform font-bold">→</span>
           </a>
         </div>
 
