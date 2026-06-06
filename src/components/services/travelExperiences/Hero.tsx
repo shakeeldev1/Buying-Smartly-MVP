@@ -1,4 +1,3 @@
-import React from 'react'
 import { MapPin, Compass, Sunrise, ArrowUpRight } from 'lucide-react'
 
 function Hero() {
@@ -35,13 +34,13 @@ function Hero() {
 
           {/* Right Layout Block - Overlapping Media & Feature Collage */}
           <div className="relative w-full lg:col-span-6 h-[520px] sm:h-[600px] lg:h-[550px]">
-            
+
             {/* Card 1: Media Card (Sits slightly below/behind) */}
             <div className="absolute top-0 left-0 w-[85%] sm:w-[75%] rounded-2xl border border-slate-200 bg-white p-4 shadow-xl transition-all duration-500 hover:-translate-y-1">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
-                  alt="Modern business terminal architecture" 
+                <img
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+                  alt="Modern business terminal architecture"
                   className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent" />

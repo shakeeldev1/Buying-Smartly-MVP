@@ -55,11 +55,11 @@ function Navbar() {
             <button className="p-2 text-slate-400 hover:text-[#D4AF37] transition-colors">
               <Globe className="h-5 w-5" />
             </button>
-            <a href="/signin" className="text-sm font-medium text-slate-600 hover:text-[#D4AF37] transition-colors duration-200">
-              Sign In
+            <a href="/login" className="text-sm font-medium text-slate-600 hover:text-[#D4AF37] transition-colors duration-200">
+              Login
             </a>
-            <a href="/register" className="bg-[#D4AF37] px-6 rounded-full py-2.5 text-sm font-semibold text-slate-900 hover:bg-[#e5c158] transition-all duration-300 shadow-lg shadow-[#D4AF37]/20">
-              Join Ecosystem
+            <a href="/signup" className="bg-[#D4AF37] px-6 rounded-full py-2.5 text-sm font-semibold text-slate-900 hover:bg-[#e5c158] transition-all duration-300 shadow-lg shadow-[#D4AF37]/20">
+              Sign Up
             </a>
           </div>
 
@@ -86,8 +86,8 @@ function Navbar() {
             <a href="/contact" className="block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-100 hover:text-[#D4AF37]">Contact</a>
           </div>
           <div className="border-t border-slate-200/50 pb-4 pt-4 px-4 space-y-3">
-            <a href="/auth/signin" className="block text-center rounded-lg border border-slate-300 px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-100">Sign In</a>
-            <a href="/register" className="block text-center rounded-full bg-[#D4AF37] px-3 py-2.5 text-base font-semibold text-slate-900 shadow-lg shadow-[#D4AF37]/20">Join Ecosystem</a>
+            <a href="/login" className="block text-center rounded-lg border border-slate-300 px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-100">Login</a>
+            <a href="/signup" className="block text-center rounded-full bg-[#D4AF37] px-3 py-2.5 text-base font-semibold text-slate-900 shadow-lg shadow-[#D4AF37]/20">Sign Up</a>
           </div>
         </div>
       )}

@@ -89,9 +89,9 @@ const experiences = [
 ];
 
 function GetOurServices() {
-  const [bookings, setBookings] = useState([])
+  const [bookings, setBookings] = useState<number[]>([])
 
-  const bookExperience = (id) => {
+  const bookExperience = (id: number) => {
     setBookings((prev) => (prev.includes(id) ? prev : [...prev, id]))
   }
 
@@ -271,11 +271,10 @@ function GetOurServices() {
                   <button
                     type="button"
                     onClick={() => bookExperience(experience.id)}
-                    className={`mt-6 w-full rounded-xl py-2.5 text-xs font-bold transition-all duration-200 ${
-                      bookings.includes(experience.id)
-                        ? 'cursor-not-allowed bg-slate-200 text-slate-500 border border-slate-300'
-                        : 'bg-[#D4AF37] text-slate-950 hover:bg-[#c7a52d]'
-                    }`}
+                    className={`mt-6 w-full rounded-xl py-2.5 text-xs font-bold transition-all duration-200 ${bookings.includes(experience.id)
+                      ? 'cursor-not-allowed bg-slate-200 text-slate-500 border border-slate-300'
+                      : 'bg-[#D4AF37] text-slate-950 hover:bg-[#c7a52d]'
+                      }`}
                     disabled={bookings.includes(experience.id)}
                   >
                     {bookings.includes(experience.id) ? 'Manifest Secured' : 'Lock Package Rate'}

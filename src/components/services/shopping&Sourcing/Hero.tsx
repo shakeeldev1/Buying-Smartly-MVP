@@ -1,4 +1,3 @@
-import React from 'react'
 import { ShoppingBag, Sparkles, Globe } from 'lucide-react'
 
 export default function Hero() {
@@ -6,7 +5,7 @@ export default function Hero() {
     <section className="bg-[#FFF6EB] text-slate-950">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          
+
           {/* Left Text Block */}
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37]/15 px-4 py-2 text-sm font-semibold text-[#B07B12]">
@@ -37,7 +36,7 @@ export default function Hero() {
               <h3 className="mt-5 text-xl font-semibold">Global catalogs</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600">Reach suppliers from every region with curated products and protected sourcing.</p>
             </div>
-            
+
             <div className="rounded-4xl border border-slate-200 bg-white p-6 shadow-lg shadow-slate-900/5">
               <div className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-[#D4AF37] text-slate-950">
                 <Sparkles className="h-6 w-6" />

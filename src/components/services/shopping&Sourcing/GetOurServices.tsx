@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { CheckCircle, Globe, Users, Tag, ArrowRight, Star } from 'lucide-react'
+import { useState } from 'react'
+import { CheckCircle, Globe, Users, Tag, Star } from 'lucide-react'
 
 const products = [
   {
@@ -99,7 +99,7 @@ export default function GetOurServices() {
 
   return (
     <section id="services" className="relative overflow-hidden bg-slate-50 px-4 py-24 sm:px-6 lg:px-8 text-slate-900">
-      
+
       {/* Decorative background flare */}
       <div className="absolute top-0 left-1/2 -z-10 h-[600px] w-[1000px] -translate-x-1/2 bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.08),transparent_50%)]" />
 
@@ -137,7 +137,7 @@ export default function GetOurServices() {
       {/* Pricing Matrix Section */}
       <div className="mx-auto max-w-7xl mt-24">
         <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
-          
+
           {/* Starter Plan */}
           <div className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-8 shadow-xs transition-all duration-300 hover:shadow-md">
             <div>
@@ -207,9 +207,9 @@ export default function GetOurServices() {
         ))}
       </div>
 
-     
 
-     
+
+
 
       {/* Catalog Cards Loop Section */}
       <div className="mx-auto max-w-7xl mt-28">
@@ -242,11 +242,10 @@ export default function GetOurServices() {
                 <button
                   type="button"
                   onClick={() => addToCart(product.id)}
-                  className={`mt-6 inline-flex w-full items-center justify-center rounded-xl py-3 text-sm font-bold transition-all ${
-                    cart.includes(product.id)
+                  className={`mt-6 inline-flex w-full items-center justify-center rounded-xl py-3 text-sm font-bold transition-all ${cart.includes(product.id)
                       ? 'cursor-not-allowed bg-slate-100 text-slate-400 border border-slate-200'
                       : 'bg-[#D4AF37] text-slate-950 hover:bg-[#c7a52d] shadow-xs'
-                  }`}
+                    }`}
                   disabled={cart.includes(product.id)}
                 >
                   {cart.includes(product.id) ? 'Added to Manifest' : 'Secure Allocation'}

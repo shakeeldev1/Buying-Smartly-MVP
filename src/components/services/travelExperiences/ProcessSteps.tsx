@@ -1,5 +1,3 @@
-import React from 'react'
-
 const steps = [
   {
     title: 'Explore destinations',
@@ -47,8 +45,8 @@ function ProcessSteps() {
           {/* Card Items Grid Matrix */}
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
-              <div 
-                key={step.title} 
+              <div
+                key={step.title}
                 className="group relative flex flex-col items-start rounded-3xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-slate-300/80"
               >
 
@@ -62,11 +60,11 @@ function ProcessSteps() {
                   <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block">
                     Stage 0{index + 1}
                   </span>
-                  
+
                   <h3 className="text-lg font-bold text-slate-950 tracking-tight group-hover:text-[#D4AF37] transition-colors duration-200">
                     {step.title}
                   </h3>
-                  
+
                   <p className="text-xs leading-relaxed text-slate-600">
                     {step.description}
                   </p>

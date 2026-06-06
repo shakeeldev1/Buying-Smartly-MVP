@@ -1,5 +1,3 @@
-import React from 'react'
-
 const steps = [
   {
     title: 'Curate products',
@@ -23,13 +21,13 @@ export default function ProcessSteps() {
   return (
     <section className="bg-white text-slate-950">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        
+
         {/* Header Grid */}
         <div className="mb-10 text-center">
           <p className="text-sm uppercase tracking-[0.25em] text-slate-500">How sourcing works</p>
           <h2 className="mt-4 text-3xl font-bold sm:text-4xl">One streamlined path from order to delivery</h2>
         </div>
-        
+
         {/* Step Cards Loop */}
         <div className="grid gap-6 lg:grid-cols-4">
           {steps.map((step, index) => (

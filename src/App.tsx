@@ -5,12 +5,12 @@ import Footer from './components/common/Footer'
 import Home from './pages/Home'
 import AboutPage from './pages/AboutPage'
 import Contact from './pages/Contact'
-import Signin from './components/common/Signin'
+import Login from './components/common/Login'
+import Signup from './components/common/Signup'
 import LogisticsNetworks from './pages/LogisticsNetworks'
 import ProfessionalServices from './pages/ProfessionalServices'
 import ShoppingSourcing from './pages/ShoppingSourcing'
 import TravelExperiences from './pages/TravelExperiences'
-import Services from './pages/Services'
 import ProductDetail from './pages/ProductDetail'
 
 const MainFunction = () => {
@@ -40,10 +40,16 @@ const router = createBrowserRouter([
         path: '/contact',
         element: <Contact />
       },
+    
       {
-        path: '/signin',
-        element: <Signin />
+        path: '/login',
+        element: <Login />
       },
+      {
+        path: '/signup',
+        element: <Signup />
+      },
+  
       {
         path: '/services/shopping',
         element: <ShoppingSourcing />

@@ -7,7 +7,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const Signin: React.FC = () => {
+const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -113,7 +113,7 @@ const Signin: React.FC = () => {
                 type="submit"
                 className="group mx-auto flex h-12 w-48 items-center justify-center gap-2 rounded-2xl bg-[#D4AF37] font-semibold text-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#c7a52d] hover:shadow-lg"
               >
-                Sign In
+                LogIn
 
                 <ArrowRight
                   size={17}
@@ -123,13 +123,10 @@ const Signin: React.FC = () => {
 
               {/* Register */}
               <p className="text-center text-sm text-zinc-500">
-                Don't have an account?{" "}
-                <button
-                  type="button"
-                  className="font-semibold text-[#D4AF37] hover:text-[#b8941f]"
-                >
+                Don't have an account?{' '}
+                <a href="/signup" className="font-semibold text-[#D4AF37] hover:text-[#b8941f]">
                   Create Account
-                </button>
+                </a>
               </p>
 
             </form>

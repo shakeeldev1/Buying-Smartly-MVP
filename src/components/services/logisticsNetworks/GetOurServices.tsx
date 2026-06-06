@@ -89,9 +89,9 @@ const offers = [
 ];
 
 function GetOurServices() {
-  const [purchasedServices, setPurchasedServices] = useState([])
+  const [purchasedServices, setPurchasedServices] = useState<number[]>([])
 
-  const handleBuy = (id) => {
+  const handleBuy = (id: number) => {
     setPurchasedServices((prev) => (prev.includes(id) ? prev : [...prev, id]))
   }
 
@@ -99,7 +99,7 @@ function GetOurServices() {
 
   return (
     <section id="services" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      
+
       {/* Header section */}
       <div className="mb-12 text-center max-w-3xl mx-auto">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#D4AF37]">Logistics services</p>
@@ -109,10 +109,10 @@ function GetOurServices() {
       </div>
 
       <div className="mt-8 overflow-hidden rounded-2xl shadow-xl">
-        <img 
-          src="https://images.unsplash.com/photo-1519452575417-5648b6b53a28?w=1200&q=80&auto=format&fit=crop" 
-          alt="logistics terminal grid background" 
-          className="w-full h-[300px] md:h-[400px] object-cover" 
+        <img
+          src="https://images.unsplash.com/photo-1519452575417-5648b6b53a28?w=1200&q=80&auto=format&fit=crop"
+          alt="logistics terminal grid background"
+          className="w-full h-[300px] md:h-[400px] object-cover"
         />
       </div>
 
@@ -181,7 +181,7 @@ function GetOurServices() {
         <h3 className="text-xl font-bold tracking-tight text-slate-950 mb-8 border-l-2 border-[#D4AF37] pl-3">
           Open Booking Freight Modules
         </h3>
-        
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {offers.map((offer) => (
             <article key={offer.id} className="group overflow-hidden rounded-2xl bg-white border border-slate-200 flex flex-col shadow-sm transition hover:shadow-md">
@@ -195,7 +195,7 @@ function GetOurServices() {
                   ID #{offer.id}
                 </div>
               </div>
-              
+
               <div className="p-6 flex flex-1 flex-col justify-between">
                 <div>
                   <div className="flex items-start justify-between gap-2">
@@ -204,15 +204,14 @@ function GetOurServices() {
                   </div>
                   <p className="mt-3 text-xs leading-relaxed text-slate-600">{offer.description}</p>
                 </div>
-                
+
                 <button
                   type="button"
                   onClick={() => handleBuy(offer.id)}
-                  className={`mt-6 w-full rounded-xl py-2.5 text-xs font-bold transition-all duration-200 ${
-                    purchasedServices.includes(offer.id)
-                      ? 'cursor-not-allowed bg-slate-100 text-slate-400 border border-slate-200'
-                      : 'bg-[#D4AF37] text-slate-950 hover:bg-[#c7a52d]'
-                  }`}
+                  className={`mt-6 w-full rounded-xl py-2.5 text-xs font-bold transition-all duration-200 ${purchasedServices.includes(offer.id)
+                    ? 'cursor-not-allowed bg-slate-100 text-slate-400 border border-slate-200'
+                    : 'bg-[#D4AF37] text-slate-950 hover:bg-[#c7a52d]'
+                    }`}
                   disabled={purchasedServices.includes(offer.id)}
                 >
                   {purchasedServices.includes(offer.id) ? 'Manifest Secured' : 'Lock Module Rate'}
@@ -235,7 +234,7 @@ function GetOurServices() {
               {purchasedItems.length} Product(s) Activated
             </span>
           </div>
-          
+
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {purchasedItems.map((item) => (
               <div key={item.id} className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-slate-300">
