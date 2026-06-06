@@ -1,13 +1,12 @@
-import React from 'react';
 import { ArrowUpRight, Globe, Share2, MessageSquare } from 'lucide-react';
 
 function Footer() {
   return (
     <footer className="border-t border-slate-200/60 bg-white text-slate-600 font-sans">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-        
+
         <div className="xl:grid xl:grid-cols-3 xl:gap-12">
-          
+
           {/* Brand Mission Statement Column */}
           <div className="space-y-6 xl:col-span-1">
             <div>
@@ -34,7 +33,7 @@ function Footer() {
 
           {/* Corporate Navigation Infrastructure */}
           <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0 sm:grid-cols-3">
-            
+
             {/* Core Pages Column */}
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">Company</h3>
@@ -50,10 +49,10 @@ function Footer() {
             <div>
               <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-900 mb-4">Ecosystem Hubs</h3>
               <ul role="list" className="space-y-3 text-sm">
-                <li><a href="#" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Shopping & Sourcing</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Travel Experiences</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Logistics Networks</a></li>
-                <li><a href="#" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Healthcare Access</a></li>
+                <li><a href="/services/shopping" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Shopping & Sourcing</a></li>
+                <li><a href="/services/travel" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Travel Experiences</a></li>
+                <li><a href="/services/logistics" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Logistics Networks</a></li>
+                <li><a href="/services/professional" className="text-slate-600 hover:text-[#D4AF37] font-medium transition-colors">Professional Services</a></li>
               </ul>
             </div>
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Globe, ShieldCheck, Settings, ArrowUpRight } from 'lucide-react';
 
 const CORE_PILLARS = [
@@ -22,7 +21,7 @@ const CORE_PILLARS = [
 function AboutUs() {
   return (
     <div className="bg-white text-slate-900 selection:bg-[#D4AF37]/10 selection:text-[#D4AF37]">
-      
+
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-10">
         <div className="text-center max-w-3xl mx-auto flex flex-col items-center">
           <span className="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase mb-3">
@@ -40,29 +39,29 @@ function AboutUs() {
 
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           <div className="lg:col-span-6 relative">
             <div className="grid grid-cols-12 gap-4 items-stretch relative z-10">
               <div className="col-span-8 rounded-3xl overflow-hidden shadow-xl shadow-slate-900/10 border border-slate-200/80 h-80 transition-transform duration-500 hover:scale-[1.02]">
-                <img 
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Corporate Team Meeting" 
+                <img
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                  alt="Corporate Team Meeting"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
 
               <div className="col-span-4 flex flex-col gap-4">
                 <div className="rounded-3xl overflow-hidden shadow-lg shadow-slate-900/10 border border-slate-200/80 h-44 transition-transform duration-500 hover:scale-[1.03]">
-                  <img 
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Corporate Architecture skyscraper" 
+                  <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                    alt="Corporate Architecture skyscraper"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-lg shadow-slate-900/10 border border-slate-200/80 h-32 transition-transform duration-500 hover:scale-[1.03]">
-                  <img 
-                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2074&auto=format&fit=crop" 
-                    alt="Digital Workspace Collaboration" 
+                  <img
+                    src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2074&auto=format&fit=crop"
+                    alt="Digital Workspace Collaboration"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -113,7 +112,7 @@ function AboutUs() {
           {CORE_PILLARS.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
-              <div 
+              <div
                 key={index}
                 className="group bg-white rounded-3xl border border-slate-200/80 p-8 shadow-lg shadow-slate-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#D4AF37]/10 hover:border-[#D4AF37]/40 flex flex-col justify-between"
               >
@@ -128,7 +127,7 @@ function AboutUs() {
                     {pillar.description}
                   </p>
                 </div>
-                
+
                 <div className="mt-8 flex justify-end text-slate-400 group-hover:text-[#D4AF37] transition-colors duration-300">
                   <ArrowUpRight className="h-5 w-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
                 </div>

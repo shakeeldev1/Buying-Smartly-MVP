@@ -1,5 +1,3 @@
-import React from "react";
-
 const MapSection = () => {
   return (
     <section className="bg-[#f8f6f1] py-24">
