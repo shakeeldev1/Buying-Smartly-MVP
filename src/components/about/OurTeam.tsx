@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface TeamMember {
   id: number;
@@ -48,33 +48,12 @@ const teamMembers: TeamMember[] = [
 ];
 
 const OurTeam: React.FC = () => {
-  const [current, setCurrent] = useState<number>(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) =>
-        prev === teamMembers.length - 1 ? 0 : prev + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrent((prev) =>
-      prev === teamMembers.length - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? teamMembers.length - 1 : prev - 1
-    );
-  };
-
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+    <section className="relative overflow-hidden bg-[#191919] py-20">
+      <div className="absolute left-10 top-20 h-60 w-60 rounded-full bg-[#A18244]/15 blur-[120px]" />
+      <div className="absolute right-10 bottom-20 h-60 w-60 rounded-full bg-[#A18244]/10 blur-[120px]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
 
         {/* Heading */}
         <div className="mx-auto max-w-3xl text-center">
@@ -82,113 +61,67 @@ const OurTeam: React.FC = () => {
             Our Team
           </span>
 
-          <h2 className="mt-5 text-4xl font-bold text-[#191919] lg:text-5xl">
+          <h2 className="mt-5 text-4xl font-bold text-white lg:text-5xl">
             Meet Our Leadership Team
           </h2>
 
-          <p className="mt-5 text-lg text-gray-600">
+          <p className="mt-5 text-lg text-gray-400">
             The people driving innovation, growth, and success behind
             BuySmartly.
           </p>
         </div>
 
-        {/* Main Card */}
-        <div className="relative mt-16">
-
-          <div className="overflow-hidden rounded-[32px] border border-gray-200 bg-white shadow-2xl">
-            <div className="grid lg:grid-cols-2">
-
-              {/* Left Side Image */}
-              <div className="relative h-[350px] sm:h-[450px] lg:h-[550px] overflow-hidden">
+        {/* Team Cards Grid */}
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {teamMembers.map((member) => (
+            <div
+              key={member.id}
+              className="group relative h-[420px] w-full overflow-hidden rounded-[24px] bg-[#1f1f1f] border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[#A18244]/40 hover:shadow-[#A18244]/20"
+            >
+              {/* Image */}
+              <div className="relative h-48 w-full overflow-hidden">
                 <img
-                  src={teamMembers[current].image}
-                  alt={teamMembers[current].name}
-                  className="h-full w-full object-cover transition-all duration-700 hover:scale-105"
+                  src={member.image}
+                  alt={member.name}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1f1f1f] via-transparent to-transparent" />
               </div>
 
-              {/* Right Side Content */}
-              <div className="flex flex-col justify-center p-8 lg:p-14">
-
-                <span className="w-fit rounded-full bg-[#A18244]/10 px-4 py-2 text-sm font-semibold text-[#A18244]">
-                  Leadership Team
+              {/* Content */}
+              <div className="flex flex-col p-6">
+                <span className="w-fit rounded-full bg-[#A18244]/10 px-3 py-1 text-xs font-semibold text-[#A18244]">
+                  Leadership
                 </span>
 
-                <h3 className="mt-6 text-3xl font-bold text-[#191919]">
-                  {teamMembers[current].name}
+                <h3 className="mt-3 text-xl font-bold text-white">
+                  {member.name}
                 </h3>
 
-                <p className="mt-2 text-lg font-semibold text-[#A18244]">
-                  {teamMembers[current].role}
+                <p className="mt-1 text-sm font-semibold text-[#A18244]">
+                  {member.role}
                 </p>
 
-                <div className="mt-6 h-1 w-20 rounded-full bg-[#A18244]" />
+                <div className="mt-3 h-0.5 w-10 rounded-full bg-[#A18244] transition-all duration-300 group-hover:w-16" />
 
-                <p className="mt-8 text-lg leading-relaxed text-gray-600">
-                  {teamMembers[current].description}
+                <p className="mt-4 line-clamp-3 text-sm leading-relaxed text-gray-400">
+                  {member.description}
                 </p>
 
-                <div className="mt-10 grid grid-cols-2 gap-6">
-
-                  <div>
-                    <h4 className="text-2xl font-bold text-[#191919]">
-                      10+
-                    </h4>
-                    <p className="text-gray-500">
-                      Years Experience
-                    </p>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-[#191919]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="text-center">
+                    <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-[#A18244]">
+                      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-semibold text-white">View Profile</p>
                   </div>
-
-                  <div>
-                    <h4 className="text-2xl font-bold text-[#191919]">
-                      100+
-                    </h4>
-                    <p className="text-gray-500">
-                      Projects Managed
-                    </p>
-                  </div>
-
-                </div>
-
-                {/* Buttons */}
-                <div className="mt-10 flex gap-4">
-
-                  <button
-                    onClick={prevSlide}
-                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[#191919] text-white transition hover:bg-[#A18244]"
-                  >
-                    ←
-                  </button>
-
-                  <button
-                    onClick={nextSlide}
-                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[#191919] text-white transition hover:bg-[#A18244]"
-                  >
-                    →
-                  </button>
-
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Indicators */}
-          <div className="mt-8 flex justify-center gap-3">
-            {teamMembers.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrent(index)}
-                className={`rounded-full transition-all duration-300 ${
-                  current === index
-                    ? "h-3 w-10 bg-[#A18244]"
-                    : "h-3 w-3 bg-gray-300"
-                }`}
-              />
-            ))}
-          </div>
-
+          ))}
         </div>
       </div>
     </section>
