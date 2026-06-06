@@ -5,11 +5,11 @@ import ProcessSteps from '../components/services/shopping&Sourcing/ProcessSteps'
 
 function ShoppingSourcing() {
   return (
-    <div>
-      <Hero/>
-      <GetOurServices/>
-      <ProcessSteps/>
-    </div>
+    <main className="bg-[#fff8f1] text-slate-900">
+      <Hero />
+      <GetOurServices />
+      <ProcessSteps />
+    </main>
   )
 }
 

@@ -11,7 +11,7 @@ const HeroContact: React.FC = () => {
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/60" />
 
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/80" />
       </div>
@@ -23,7 +23,7 @@ const HeroContact: React.FC = () => {
             Contact BuySmartly
           </span>
 
-          <h1 className="mt-8 text-5xl font-bold tracking-tight text-white md:text-7xl">
+          <h1 className="mt-8 text-4xl font-bold tracking-tight text-white md:text-5xl"> 
             Let's Build Something
             <span className="text-[#A18244]"> Extraordinary</span>
           </h1>

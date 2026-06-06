@@ -5,11 +5,11 @@ import ProcessSteps from '../components/services/logisticsNetworks/ProcessSteps'
 
 function LogisticsNetworks() {
   return (
-    <div>
-      <Hero/>
-      <GetOurServices/>
-      <ProcessSteps/>
-    </div>
+    <main className="bg-slate-50 text-slate-900">
+      <Hero />
+      <GetOurServices />
+      <ProcessSteps />
+    </main>
   )
 }
 
