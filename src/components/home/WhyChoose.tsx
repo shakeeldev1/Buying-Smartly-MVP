@@ -18,7 +18,7 @@ function WhyChoose() {
             Core Advantages
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-4">
-            Why Choose <span className="text-[#D4AF37]">BuySmartly</span>?
+            Why Choose <span className="text-[#D4AF37]">BuySmartly</span> ?
           </h2>
           <p className="text-slate-500 font-light max-w-md leading-relaxed">
             Premium infrastructure engineered to accelerate secure cross-border operational pathways.

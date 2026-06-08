@@ -56,7 +56,7 @@ function EcosystemOnboarding() {
 
             <a 
               href="/register" 
-              className="block w-full py-3.5 text-center rounded-2xl bg-[#D4AF37] text-slate-900 font-semibold hover:bg-[#e5c158] shadow-lg shadow-[#D4AF37]/20 transition-all duration-300 mt-4 hover:shadow-xl"
+              className="block w-full py-2 text-center rounded-2xl bg-[#D4AF37] text-slate-900 font-semibold hover:bg-[#e5c158] shadow-lg shadow-[#D4AF37]/20 transition-all duration-300 mt-4 hover:shadow-xl"
             >
               Sign Up as Seeker
             </a>
@@ -97,7 +97,7 @@ function EcosystemOnboarding() {
 
             <a 
               href="/register/provider" 
-              className="block w-full py-3.5 text-center rounded-2xl border-2 border-[#D4AF37] text-[#D4AF37] font-semibold hover:bg-[#D4AF37] hover:text-slate-900 transition-all duration-300 mt-4 hover:shadow-lg hover:shadow-[#D4AF37]/20"
+              className="block w-full py-2 text-center rounded-2xl border-2 border-[#D4AF37] text-[#D4AF37] font-semibold hover:bg-[#D4AF37] hover:text-slate-900 transition-all duration-300 mt-4 hover:shadow-lg hover:shadow-[#D4AF37]/20"
             >
               Apply as Provider
             </a>
