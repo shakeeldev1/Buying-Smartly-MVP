@@ -13,6 +13,20 @@ import ShoppingSourcing from './pages/ShoppingSourcing'
 import TravelExperiences from './pages/TravelExperiences'
 import ProductDetail from './pages/ProductDetail'
 
+// Provider Portal imports
+import { ProviderStateProvider } from './context/ProviderState'
+import ProviderLayout from './components/provider/ProviderLayout'
+import Dashboard from './pages/provider/Dashboard'
+import Profile from './pages/provider/Profile'
+import Services from './pages/provider/Services'
+import CreateService from './pages/provider/CreateService'
+import EditService from './pages/provider/EditService'
+import Requests from './pages/provider/Requests'
+import RequestDetail from './pages/provider/RequestDetail'
+import Messages from './pages/provider/Messages'
+import Analytics from './pages/provider/Analytics'
+import Settings from './pages/provider/Settings'
+
 const MainFunction = () => {
   return (
     <div>
@@ -40,7 +54,6 @@ const router = createBrowserRouter([
         path: '/contact',
         element: <Contact />
       },
-    
       {
         path: '/login',
         element: <Login />
@@ -49,7 +62,6 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <Signup />
       },
-  
       {
         path: '/services/shopping',
         element: <ShoppingSourcing />
@@ -71,6 +83,58 @@ const router = createBrowserRouter([
         element: <ProfessionalServices />
       }
     ]
+  },
+  {
+    path: '/provider',
+    element: (
+      <ProviderStateProvider>
+        <ProviderLayout />
+      </ProviderStateProvider>
+    ),
+    children: [
+      {
+        path: 'dashboard',
+        element: <Dashboard />
+      },
+      {
+        path: 'profile',
+        element: <Profile />
+      },
+      {
+        path: 'services',
+        element: <Services />,
+        children: [
+          {
+            path: 'create',
+            element: <CreateService />
+          },
+          {
+            path: ':id/edit',
+            element: <EditService />
+          }
+        ]
+      },
+      {
+        path: 'requests',
+        element: <Requests />
+      },
+      {
+        path: 'requests/:id',
+        element: <RequestDetail />
+      },
+      {
+        path: 'messages',
+        element: <Messages />
+      },
+      {
+        path: 'analytics',
+        element: <Analytics />
+      },
+      {
+        path: 'settings',
+        element: <Settings />
+      }
+    ]
   }
 ])
 
@@ -81,3 +145,4 @@ function App() {
 }
 
 export default App
+

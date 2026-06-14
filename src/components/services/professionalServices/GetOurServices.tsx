@@ -89,9 +89,9 @@ const packages = [
 ];
 
 function GetOurServices() {
-  const [selectedPackages, setSelectedPackages] = useState([])
+  const [selectedPackages, setSelectedPackages] = useState<number[]>([])
 
-  const addPackage = (id) => {
+  const addPackage = (id: number) => {
     setSelectedPackages((prev) => (prev.includes(id) ? prev : [...prev, id]))
   }
 
