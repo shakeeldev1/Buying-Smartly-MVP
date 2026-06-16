@@ -1,4 +1,3 @@
-
 import {
   ShoppingCart,
   Plane,
@@ -11,7 +10,7 @@ import {
   UserRound,
 } from "lucide-react";
 
-const services = [
+const SERVICES = [
   {
     icon: ShoppingCart,
     title: "Shopping & Sourcing",
@@ -70,69 +69,72 @@ const services = [
 
 function OurServices() {
   return (
-    <section className="bg-white py-10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="bg-white py-12 text-slate-900 antialiased overflow-hidden select-none">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="mx-auto mb-16 max-w-3xl text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.3em] text-[#D4AF37]">
+        {/* Global Component Section Header */}
+        <div className="mx-auto mb-16 max-w-2xl text-center flex flex-col items-center">
+          <span className="inline-block text-[11px] font-bold uppercase tracking-[0.25em] text-[#A18244] bg-[#D4AF37]/10 px-3 py-1 rounded-full mb-3">
             Strategic Architecture
           </span>
 
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Nine Vertical{" "}
-            <span className="text-[#D4AF37]">
-              Ecosystem
-            </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+            Nine Vertical <span className="text-[#D4AF37]">Ecosystem</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-slate-500 leading-relaxed">
-            Our multi-vertical core infrastructure powering
-            seamless global connection pathways.
+          <p className="mt-3 text-sm sm:text-base text-slate-500 font-medium max-w-md leading-relaxed">
+            Our multi-vertical core infrastructure powering seamless global connection pathways.
           </p>
 
-          <div className="mx-auto mt-6 h-[2px] w-14 rounded-full bg-[#D4AF37]" />
+          <div className="w-10 h-[3px] bg-[#D4AF37]/40 mt-5 rounded-full" />
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => {
+        {/* Services Structural Layout Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {SERVICES.map((service, index) => {
             const Icon = service.icon;
 
             return (
               <div
                 key={index}
-                style={{ backgroundImage: `url(${service.bgImage})` }}
-                className="group relative overflow-hidden rounded-3xl border border-slate-700/50 bg-cover bg-center p-8 transition-all duration-500 hover:-translate-y-2 hover:border-[#D4AF37]/50 hover:shadow-[0_25px_50px_rgba(212,175,55,0.2)] min-h-[280px] flex flex-col justify-between"
+                className="group relative overflow-hidden rounded-3xl border border-slate-200/80 p-6 sm:p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-[#D4AF37]/30 hover:shadow-xl hover:shadow-[#D4AF37]/5 min-h-[300px] flex flex-col justify-between items-stretch cursor-pointer"
               >
-                {/* Dark overlay for readability */}
-                <div className="absolute inset-0 bg-slate-900/85 transition-colors duration-500 group-hover:bg-slate-900/75 z-0" />
+                {/* Visual Media Rendering Foundation Layer */}
+                <img 
+                  src={service.bgImage} 
+                  alt={service.title} 
+                  className="absolute inset-0 w-full h-full object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                />
 
-                {/* Relative Wrapper for Content to sit above overlay */}
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#D4AF37]/20 text-[#D4AF37] backdrop-blur-sm transition-all duration-500 group-hover:scale-110 group-hover:bg-[#D4AF37] group-hover:text-white shadow-md">
-                    <Icon size={26} />
+                {/* Micro-Contrast High Legibility Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/95 via-slate-950/85 to-slate-950/95 z-0" />
+
+                {/* Relative Content Frame Matrix */}
+                <div className="relative z-10 flex flex-col flex-1 justify-between items-stretch">
+                  
+                  {/* Glassmorphic Icon Wrapper Container */}
+                  <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl bg-[#D4AF37]/10 border border-[#D4AF37]/20 text-[#D4AF37] backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#D4AF37] group-hover:text-slate-950 group-hover:border-[#D4AF37] shadow-sm">
+                    <Icon className="h-5 w-5 stroke-[2.2]" />
                   </div>
 
+                  {/* Text Description Segment Blocks */}
                   <div>
-                    {/* Content */}
-                    <h3 className="mb-3 text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#D4AF37]">
+                    <h3 className="mb-2 text-lg font-bold text-white tracking-tight transition-colors duration-200 group-hover:text-[#D4AF37]">
                       {service.title}
                     </h3>
 
-                    <p className="leading-relaxed text-slate-300">
+                    <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed opacity-85">
                       {service.desc}
                     </p>
                   </div>
                 </div>
 
-                {/* Bottom Center Line */}
+                {/* Centered Decorative Dynamic Anchor Track */}
                 <div className="absolute bottom-0 left-1/2 h-[3px] w-0 -translate-x-1/2 z-20 rounded-full bg-[#D4AF37] transition-all duration-500 group-hover:w-24" />
 
-                {/* Glow Effect */}
+                {/* Subtle Ambient Radial Lighting Flares */}
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none z-10">
-                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#D4AF37]/20 blur-3xl" />
+                  <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#D4AF37]/10 blur-3xl" />
                 </div>
               </div>
             );
