@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Shield, Zap, Globe, Users } from 'lucide-react';
 
 const reasons = [
