@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Search, Eye, Users, BarChart3 } from 'lucide-react';
 
 const features = [

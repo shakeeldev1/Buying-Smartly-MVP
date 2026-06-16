@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Globe, ShieldCheck, Activity, TrendingUp } from 'lucide-react';
 
 const stats = [

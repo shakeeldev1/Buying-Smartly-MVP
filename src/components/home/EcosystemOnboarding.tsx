@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { CheckCircle2, User, Briefcase } from 'lucide-react';
 
 function EcosystemOnboarding() {
