@@ -70,7 +70,7 @@ function SearchHub() {
   });
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 font-sans antialiased">
+    <section className="py-16 sm:py-20 lg:py-24 bg-linear-to-b from-white via-slate-50 to-white text-slate-900 font-sans antialiased">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-10 lg:mb-10">

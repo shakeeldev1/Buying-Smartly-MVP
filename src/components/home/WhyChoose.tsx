@@ -10,7 +10,7 @@ const reasons = [
 
 function WhyChoose() {
   return (
-    <section className="py-20 bg-slate-50 text-slate-900 antialiased">
+    <section className="py-10 bg-slate-50 text-slate-900 antialiased">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
         
         <div className="text-center mb-16 max-w-3xl mx-auto flex flex-col items-center">
@@ -23,7 +23,7 @@ function WhyChoose() {
           <p className="text-slate-500 font-light max-w-md leading-relaxed">
             Premium infrastructure engineered to accelerate secure cross-border operational pathways.
           </p>
-          <div className="w-12 h-[2px] bg-[#D4AF37]/30 mt-6 rounded-full" />
+          <div className="w-25 h-[2px] bg-[#D4AF37]/60 mt-6 rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -35,7 +35,7 @@ function WhyChoose() {
                 className="group relative bg-white border border-slate-200/80 p-8 rounded-3xl shadow-lg shadow-slate-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#D4AF37]/10 hover:border-[#D4AF37]/40 flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] mb-6 group-hover:shadow-lg group-hover:shadow-[#D4AF37]/20 transition-all duration-300 group-hover:scale-110">
+                  <div className="h-14 w-14 rounded-2xl bg-linear-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] mb-6 group-hover:shadow-lg group-hover:shadow-[#D4AF37]/20 transition-all duration-300 group-hover:scale-110">
                     <Icon className="h-6 w-6 transition-transform duration-300" />
                   </div>
                   
@@ -46,8 +46,6 @@ function WhyChoose() {
                     {item.desc}
                   </p>
                 </div>
-
-                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-transparent group-hover:bg-[#D4AF37]/40 transition-colors duration-500 rounded-b-3xl" />
               </div>
             );
           })}

@@ -4,17 +4,20 @@ const CORE_PILLARS = [
   {
     icon: Globe,
     title: "Global Sourcing Network",
-    description: "BuySmartly is a dominant connective portal to global sourcing networks, ensuring elite business operations at scale."
+    description: "BuySmartly is a dominant connective portal to global sourcing networks, ensuring elite business operations at scale.",
+    bgImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTArdt9oXuu3b8z-sz-c7RFkdu7E38xrpb2-g&s" // Global logistics/shipping image
   },
   {
     icon: ShieldCheck,
     title: "Uncompromised Integrity",
-    description: "Built on absolute trust, transparency, and top-tier direct channels across verified networks."
+    description: "Built on absolute trust, transparency, and top-tier direct channels across verified networks.",
+    bgImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop" // Handshake/Trust image
   },
   {
     icon: Settings,
     title: "The Monetization Engine",
-    description: "Driving cross-vertical corporate capitalization and premium strategic connection pathways."
+    description: "Driving cross-vertical corporate capitalization and premium strategic connection pathways.",
+    bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" // Business strategy/finance image
   }
 ];
 
@@ -22,6 +25,7 @@ function AboutUs() {
   return (
     <div className="bg-white text-slate-900 selection:bg-[#D4AF37]/10 selection:text-[#D4AF37]">
 
+      {/* --- Oopar Wala Section (Unchanged) --- */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-16 pb-10">
         <div className="text-center max-w-3xl mx-auto flex flex-col items-center">
           <span className="text-xs font-bold tracking-[0.2em] text-[#D4AF37] uppercase mb-3">
@@ -37,7 +41,7 @@ function AboutUs() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           <div className="lg:col-span-6 relative">
@@ -107,29 +111,38 @@ function AboutUs() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
+      {/* --- Updated Cards Section (Background Images Added) --- */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-15">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {CORE_PILLARS.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={index}
-                className="group bg-white rounded-3xl border border-slate-200/80 p-8 shadow-lg shadow-slate-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#D4AF37]/10 hover:border-[#D4AF37]/40 flex flex-col justify-between"
+                style={{ backgroundImage: `url(${pillar.bgImage})` }}
+                className="relative group bg-cover bg-center rounded-3xl border border-slate-700/50 p-8 shadow-lg shadow-slate-900/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#D4AF37]/20 hover:border-[#D4AF37]/50 flex flex-col justify-between overflow-hidden min-h-[320px]"
               >
-                <div>
-                  <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#D4AF37]/20 to-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] mb-6 group-hover:shadow-lg group-hover:shadow-[#D4AF37]/20 transition-all duration-300 group-hover:scale-110">
-                    <Icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-slate-900 tracking-tight mb-3 group-hover:text-[#D4AF37] transition-colors duration-200">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
+                {/* Dark Overlay so text is readable over the image */}
+                <div className="absolute inset-0 bg-slate-900/85 group-hover:bg-slate-900/75 transition-colors duration-500 z-0" />
 
-                <div className="mt-8 flex justify-end text-slate-400 group-hover:text-[#D4AF37] transition-colors duration-300">
-                  <ArrowUpRight className="h-5 w-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                {/* Card Content */}
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#D4AF37]/30 to-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] mb-6 shadow-md shadow-black/20 group-hover:shadow-lg group-hover:shadow-[#D4AF37]/30 transition-all duration-300 group-hover:scale-110 backdrop-blur-sm">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    {/* Changed text color to white for contrast */}
+                    <h3 className="text-xl font-semibold text-white tracking-tight mb-3 group-hover:text-[#D4AF37] transition-colors duration-200">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-slate-300 text-sm font-light leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex justify-end text-slate-400 group-hover:text-[#D4AF37] transition-colors duration-300">
+                    <ArrowUpRight className="h-5 w-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+                  </div>
                 </div>
               </div>
             );

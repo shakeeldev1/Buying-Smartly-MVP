@@ -13,9 +13,10 @@ function Home() {
   return (
     <div className="bg-white text-zinc-900 antialiased">
       <Hero />
+      <AboutUs/>
       <SearchHub />
       <LaunchReady />
-      <AboutUs />
+      {/* <AboutUs /> */}
       <OurServices />
       <WhyChoose />
       <StatsBand />
