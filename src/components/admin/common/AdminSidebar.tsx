@@ -55,6 +55,11 @@ function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
             Overview
           </NavLink>
 
+           <NavLink to="/admin/users" className={navItemStyles} onClick={onClose}>
+            <Users className="h-5 w-5 text-slate-400 group-[.active]:text-white group-hover:text-white transition-colors" />
+            Users
+          </NavLink>
+
           <NavLink to="/admin/products" className={navItemStyles} onClick={onClose}>
             <Package className="h-5 w-5 text-slate-400 group-[.active]:text-white group-hover:text-white transition-colors" />
             Products
@@ -65,10 +70,7 @@ function AdminSidebar({ isOpen, onClose }: AdminSidebarProps) {
             Orders
           </NavLink>
 
-          <NavLink to="/admin/users" className={navItemStyles} onClick={onClose}>
-            <Users className="h-5 w-5 text-slate-400 group-[.active]:text-white group-hover:text-white transition-colors" />
-            Users
-          </NavLink>
+         
 
           <NavLink to="/admin/analytics" className={navItemStyles} onClick={onClose}>
             <BarChart3 className="h-5 w-5 text-slate-400 group-[.active]:text-white group-hover:text-white transition-colors" />

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { User, Mail, Phone, MapPin, Camera, Save, ShieldCheck } from 'lucide-react'
 
 function Settings() {
