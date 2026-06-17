@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useProviderState } from '../../context/ProviderState';
 import { Building2, Mail, MapPin, Globe, FileText, Save, ShieldCheck, ShieldAlert, Check, Camera, ImagePlus, ChevronDown } from 'lucide-react';
+import { CustomSelect } from '../../components/common/CustomSelect';
 
 type ProfileFormValues = {
   businessName: string;
@@ -13,52 +14,7 @@ type ProfileFormValues = {
   website: string;
 };
 
-const CustomSelect = ({ value, onChange, options, placeholder = "Select an option" }: any) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  return (
-    <div className="relative group" ref={ref}>
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full h-11 rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] hover:bg-white px-4 text-left text-[13px] font-medium text-[#111827] outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-200 flex items-center justify-between"
-      >
-        <span>{value || placeholder}</span>
-        <ChevronDown className={`h-4.5 w-4.5 text-[#9CA3AF] transition-all duration-200 ${isOpen ? 'rotate-180 text-indigo-500' : 'group-hover:text-[#6B7280]'}`} />
-      </button>
-
-      {isOpen && (
-        <div className="absolute z-50 w-full mt-2 bg-white border border-[#E5E7EB] rounded-xl shadow-xl shadow-black/10 py-1.5 animate-in fade-in slide-in-from-top-2 duration-200 overflow-hidden">
-          {options.map((opt: string) => (
-            <button
-              key={opt}
-              type="button"
-              onClick={() => {
-                onChange(opt);
-                setIsOpen(false);
-              }}
-              className="w-full px-4 py-2.5 text-left text-[13px] font-semibold text-[#374151] hover:bg-indigo-50/80 hover:text-indigo-700 flex items-center justify-between transition-colors"
-            >
-              {opt}
-              {value === opt && <Check className="h-4 w-4 text-indigo-600" />}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
 
 const Profile: React.FC = () => {
   const { profile, updateProfile } = useProviderState();
@@ -97,7 +53,7 @@ const Profile: React.FC = () => {
 
   const LABEL = "block text-[11px] font-bold text-[#6B7280] uppercase tracking-wider mb-2";
   const INPUT_WRAPPER = "relative group";
-  const INPUT_CLASS = "w-full h-11 rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] hover:bg-white pl-10 pr-4 text-[13px] font-medium text-[#111827] outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-200 placeholder-[#9CA3AF]";
+  const INPUT_CLASS = "w-full h-11 rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] hover:bg-white pl-10 pr-4 text-[13px] font-medium text-[#111827] outline-none focus:outline-none focus-visible:outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-200 placeholder-[#9CA3AF] shadow-sm";
   const ICON_CLASS = "absolute left-3.5 top-1/2 -translate-y-1/2 h-4.5 w-4.5 text-[#9CA3AF] group-focus-within:text-indigo-500 transition-colors";
 
   const checks = [
@@ -293,7 +249,7 @@ const Profile: React.FC = () => {
               <textarea 
                 {...register('description', { required: 'Description is required' })} 
                 rows={5}
-                className="w-full rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] hover:bg-white pl-10 pr-4 py-3.5 text-[13px] font-medium text-[#111827] outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-200 resize-none placeholder-[#9CA3AF] leading-relaxed" 
+                className="w-full rounded-xl border border-[#E5E7EB] bg-[#FAFAFA] hover:bg-white pl-10 pr-4 py-3.5 text-[13px] font-medium text-[#111827] outline-none focus:outline-none focus-visible:outline-none focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all duration-200 resize-none placeholder-[#9CA3AF] leading-relaxed shadow-sm" 
                 placeholder="Describe your services and capabilities..."
               />
             </div>

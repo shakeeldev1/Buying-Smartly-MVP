@@ -14,6 +14,10 @@ export interface Service {
   views: number;
   clicks: number;
   requestsCount: number;
+  pricingModel?: string;
+  deliveryTime?: string;
+  features?: string[];
+  requirements?: string;
 }
 
 export interface RequestItem {
@@ -108,7 +112,11 @@ const initialServices: Service[] = [
     price: "$89",
     status: "Active",
     availability: "Mon - Fri, 9 AM - 6 PM EST",
-    images: ["https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80&auto=format&fit=crop"],
+    images: [
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586528116311-ad8ed7c80a30?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&q=80&auto=format&fit=crop"
+    ],
     tags: ["Freight", "Logistics", "Shipping", "Global"],
     created: "2026-04-10",
     views: 1240,
@@ -123,7 +131,11 @@ const initialServices: Service[] = [
     price: "$125",
     status: "Active",
     availability: "24/7 Operations Support",
-    images: ["https://images.unsplash.com/photo-1550565099-8b8c7db9b0ff?w=1200&q=80&auto=format&fit=crop"],
+    images: [
+      "https://images.unsplash.com/photo-1550565099-8b8c7db9b0ff?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1565891741441-64926e441838?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1200&q=80&auto=format&fit=crop"
+    ],
     tags: ["Warehouse", "Fulfillment", "Supply Chain"],
     created: "2026-04-15",
     views: 950,
@@ -138,7 +150,11 @@ const initialServices: Service[] = [
     price: "$450",
     status: "Active",
     availability: "By Appointment Only",
-    images: ["https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop"],
+    images: [
+      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=1200&q=80&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1200&q=80&auto=format&fit=crop"
+    ],
     tags: ["Sourcing", "Luxury", "Manufacturing", "Bespoke"],
     created: "2026-05-01",
     views: 540,
