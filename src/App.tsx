@@ -23,8 +23,6 @@ import Overview from './pages/admin/Overview'
 import Products from './pages/admin/Products'
 import Orders from './pages/admin/Orders'
 import Users from './pages/admin/Users'
-import Analytics from './pages/admin/Analytics'
-import Settings from './pages/admin/Settings'
 
 // Provider Portal imports
 import { ProviderStateProvider } from './context/ProviderState'
@@ -103,46 +101,6 @@ const router = createBrowserRouter([
       { path: 'users', element: <Users /> },
       { path: 'analytics', element: <Analytics /> },
       { path: 'settings', element: <Settings /> }
-      {
-        path: '/',
-        element: <Home />
-      },
-      {
-        path: '/about',
-        element: <AboutPage />
-      },
-      {
-        path: '/contact',
-        element: <Contact />
-      },
-      {
-        path: '/login',
-        element: <Login />
-      },
-      {
-        path: '/signup',
-        element: <Signup />
-      },
-      {
-        path: '/services/shopping',
-        element: <ShoppingSourcing />
-      },
-      {
-        path: '/product/:id',
-        element: <ProductDetail />
-      },
-      {
-        path: '/services/travel',
-        element: <TravelExperiences />
-      },
-      {
-        path: '/services/logistics',
-        element: <LogisticsNetworks />
-      },
-      {
-        path: '/services/professional',
-        element: <ProfessionalServices />
-      }
     ]
   },
   {
