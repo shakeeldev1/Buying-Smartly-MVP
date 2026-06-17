@@ -1,17 +1,24 @@
 @import "tailwindcss";
 
+button {
+  cursor: pointer;
+}
+
 /* ─── Global scrollbar — light mode to match white dashboard ─── */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
+
 ::-webkit-scrollbar-track {
   background: #F9FAFB;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #D1D5DB;
   border-radius: 9999px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #9CA3AF;
 }
@@ -30,7 +37,10 @@ html {
 }
 
 /* ─── Hide scrollbars utility ─── */
-.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -40,7 +50,11 @@ html {
 /* Removed global focus-visible to allow Tailwind utilities to handle focus completely */
 
 /* ─── Smooth transitions on all interactive elements ─── */
-button, a, input, select, textarea {
+button,
+a,
+input,
+select,
+textarea {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -48,6 +62,7 @@ button, a, input, select, textarea {
 [draggable="true"] {
   cursor: grab;
 }
+
 [draggable="true"]:active {
   cursor: grabbing;
 }

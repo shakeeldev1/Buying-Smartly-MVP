@@ -1,4 +1,4 @@
-import React from "react";
+
 
 const WhyUs: React.FC = () => {
   const features = [

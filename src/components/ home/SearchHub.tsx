@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Search, SlidersHorizontal, Lock, Layers, Eye, ShieldCheck } from 'lucide-react';
 
 const CATEGORIES = [

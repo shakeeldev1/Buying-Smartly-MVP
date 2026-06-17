@@ -1,7 +1,15 @@
 import { useState } from 'react'
-import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight, ShieldCheck, Globe, Cpu, Scale, HelpCircle } from 'lucide-react'
+import { Briefcase, Users, BarChart2, CheckCircle, ArrowRight } from 'lucide-react'
 
-const packages = [
+type ServicePackage = {
+  id: number
+  title: string
+  description: string
+  price: string
+  img: string
+}
+
+const packages: ServicePackage[] = [
   {
     id: 1,
     title: 'Strategy Blueprint',

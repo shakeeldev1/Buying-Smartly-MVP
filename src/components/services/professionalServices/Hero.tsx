@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Briefcase, Sparkles, Users, ArrowRight, TrendingUp } from 'lucide-react'
 
 function Hero() {
